@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 15</title>
+
+    <!-- JS -->
+    <script>
+
+        // Vetor
+        var nomes = []
+
+        // Função
+        function cadastro(){
+
+            // Obter o nome
+            var nome = document.getElementById("nome").value
+
+            // Verificar se há o nome informado no vetor
+            var existe = false
+            for(var indice=0; indice<nomes.length; indice++){
+                if(nome.toLowerCase() == nomes[indice].toLowerCase()){
+                    existe = true
+                }
+            }
+
+            // Verifica se o nome será cadastrado
+            if(existe == false){
+                nomes.push(nome)
+            }else{
+                alert("O nome informado já consta no vetor")
+            }
+
+            // Exibir os dados do vetor
+            document.getElementById("mensagem").innerHTML = nomes
+
+        }
+
+    </script>
+</head>
+<body>
+    
+    <form>
+        <input type="text" placeholder="Nome" id="nome">
+        <input type="button" value="Enviar" onclick="cadastro()">
+    </form>
+
+    <h1 id="mensagem"></h1>
+
+</body>
+</html>

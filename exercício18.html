@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 18</title>
+
+    <!-- JS -->
+    <script>
+
+        // Matriz
+        var dados = []
+
+        // Função
+        function cadastrar(){
+
+            // Obter dados
+            var aluno = document.getElementById("aluno").value
+            var nota1 = parseFloat(document.getElementById("nota1").value)
+            var nota2 = parseFloat(document.getElementById("nota2").value)
+
+            // Realizar a média
+            var media = (nota1 + nota2) / 2
+
+            // Cadastrar na matriz
+            dados.push([aluno, nota1, nota2, media])
+
+            // Obter o elemento mensagem
+            var mensagem = document.getElementById("mensagem")
+
+            // Limpar os conteúdos
+            mensagem.innerHTML = ""
+
+            // Listar dados
+            for(var i=0; i<dados.length; i++){
+                mensagem.innerHTML += "Nome: " + dados[i][0] + "<br>"
+                mensagem.innerHTML += "Nota 1: " + dados[i][1] + "<br>"
+                mensagem.innerHTML += "Nota 2: " + dados[i][2] + "<br>"
+                mensagem.innerHTML += "Média: " + dados[i][3] + "<hr>"
+            }
+
+        }
+
+    </script>
+</head>
+<body>
+    
+    <form>
+        <input type="text" placeholder="Aluno" id="aluno">
+        <input type="text" placeholder="Nota 1" id="nota1">
+        <input type="text" placeholder="Nota 2" id="nota2">
+        <input type="button" value="Cadastrar" onclick="cadastrar()">
+    </form>
+
+    <h1 id="mensagem"></h1>
+
+</body>
+</html>

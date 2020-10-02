@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 12</title>
+
+    <!-- JS -->
+    <script>
+
+        function verificar10(){
+
+            // Vetor
+            var numeros = []
+
+            // Armazenar os quatro valores
+            numeros.push(parseInt(document.getElementById("numero1").value))   
+            numeros.push(parseInt(document.getElementById("numero2").value))   
+            numeros.push(parseInt(document.getElementById("numero3").value))   
+            numeros.push(parseInt(document.getElementById("numero4").value))   
+
+            // Condicional
+            var existe = false
+            for(var i=0; i<5; i++){
+                if(numeros[i] == 10){
+                    existe = true
+                }
+            }
+
+            // Limpar o conteúdo do id mensagem
+            document.getElementById("mensagem").innerHTML = ""
+
+            // Mensagem
+            if(existe == false){
+                document.getElementById("mensagem").innerHTML = "Não foi informado o número 10"
+            }else{
+                for(var i=0; i<5; i++){
+                    if(numeros[i] == 10){
+                        document.getElementById("mensagem").innerHTML += "Há um número 10 na posição " + (i+1) + "<br>"
+                    }
+                }
+            }
+
+
+        }
+
+    </script>
+</head>
+<body>
+    
+    <form>
+        <input type="text" placeholder="Primeiro número" id="numero1">
+        <input type="text" placeholder="Segundo número" id="numero2">
+        <input type="text" placeholder="Terceiro número" id="numero3">
+        <input type="text" placeholder="Quarto número" id="numero4">
+        <input type="button" value="Enviar" onclick="verificar10()">
+    </form>
+
+    <h1 id="mensagem"></h1>
+
+</body>
+</html>

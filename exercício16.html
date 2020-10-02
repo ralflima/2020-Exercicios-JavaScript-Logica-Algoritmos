@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 16</title>
+
+    <!-- JS -->
+    <script>
+
+        // Matriz
+        var matriz = []
+
+        // Função
+        function cadastrar(){
+
+            // Capturar dados
+            var nome = document.getElementById("nome").value
+            var idade = parseInt(document.getElementById("idade").value)
+
+            // Cadastrar os dados na matriz
+            matriz.push([nome, idade])
+
+            // Limpar o elemento H1
+            document.getElementById("mensagem").innerHTML = ""
+
+            // Exibir a matriz no elemento H1
+            for(var i=0; i<matriz.length; i++){
+                document.getElementById("mensagem").innerHTML += matriz[i][0] + " tem " + matriz[i][1] + " anos."                     
+                document.getElementById("mensagem").innerHTML += "<hr>"
+            }
+
+        }
+
+    </script>
+</head>
+<body>
+    
+    <form>
+        <input type="text" placeholder="Nome" id="nome">
+        <input type="text" placeholder="Idade" id="idade">
+        <input type="button" value="Enviar" onclick="cadastrar()">
+    </form>
+
+    <h1 id="mensagem"></h1>
+
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 02</title>
+
+    <!-- JS -->
+    <script>
+
+        function calcular(){
+            // Obter as três notas
+            var nota1 = parseFloat(document.getElementById("nota1").value)
+            var nota2 = parseFloat(document.getElementById("nota2").value)
+            var nota3 = parseFloat(document.getElementById("nota3").value)
+        
+            // Média
+            var media = (nota1 + nota2 + nota3) / 3
+
+            // Situação
+            var situacao = "Aprovado(a)"
+
+            if(media >= 5 && media <= 6.9){
+                situacao = "Em Exame"
+            }
+            
+            if(media >= 0 && media <= 4.9){
+                situacao = "Reprovado(a)"
+            }
+
+            // Mensagem
+            document.getElementById("mensagem").innerHTML = situacao + " com média "+media.toFixed(1)
+        
+        }
+
+    </script>
+
+</head>
+<body>
+    
+    <form>
+        <input type="text" placeholder="Primeira nota" id="nota1">
+        <input type="text" placeholder="Segunda nota" id="nota2">
+        <input type="text" placeholder="Terceira nota" id="nota3">
+        <input type="button" value="Enviar" onclick="calcular()">
+    </form>
+
+    <h1 id="mensagem"></h1>
+
+</body>
+</html>

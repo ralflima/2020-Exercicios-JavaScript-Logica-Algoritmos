@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 04</title>
+
+    <!-- JS -->
+    <script>
+
+        function menor(){
+            // Obter os números
+            var n1 = parseInt(document.getElementById("numero1").value)
+            var n2 = parseInt(document.getElementById("numero2").value)
+            var n3 = parseInt(document.getElementById("numero3").value)
+
+            // Menor
+            var menor = n1
+
+            // Verificação
+            if(n2 < menor){
+                menor = n2
+            }
+
+            if(n3 < menor){
+                menor = n3
+            }
+
+            // Exibir o menor
+            document.getElementById("mensagem").innerHTML = menor
+        }
+
+    </script>
+</head>
+<body>
+    
+    <form>
+        <input type="text" placeholder="Primeira número" id="numero1">
+        <input type="text" placeholder="Segundo número" id="numero2">
+        <input type="text" placeholder="Terceiro número" id="numero3">
+        <input type="button" value="Enviar" onclick="menor()">
+    </form>
+
+    <h1 id="mensagem"></h1>
+
+</body>
+</html>

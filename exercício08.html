@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 08</title>
+
+    <!-- JS -->
+    <script>
+
+        function verificar(){
+
+            // Obter valores
+            var inicio = parseInt(document.getElementById("inicio").value)
+            var fim = parseInt(document.getElementById("fim").value)
+
+            // Contadores
+            var positivos = 0
+            var negativos = 0
+            var pares = 0
+            var impares = 0
+
+            // Laço
+            while(inicio <= fim){
+
+                // Par e ímpar
+                if(inicio % 2 == 0){
+                    pares++
+                }else{
+                    impares++
+                }
+
+                // Positivo e negativo
+                if(inicio >= 0){
+                    positivos++
+                }else{
+                    negativos++
+                }
+
+                // Incremento
+                inicio++
+            }
+
+            // Exibir os contadores
+            document.getElementById("mensagem").innerHTML = "Pares "+pares
+            document.getElementById("mensagem").innerHTML += "<br>Ímpares "+impares
+            document.getElementById("mensagem").innerHTML += "<br>Positivos "+positivos
+            document.getElementById("mensagem").innerHTML += "<br>Negativos "+negativos
+
+        }
+
+    </script>
+
+</head>
+<body>
+
+    <form>
+        <input type="text" placeholder="Número inicial" id="inicio">
+        <input type="text" placeholder="Número final" id="fim">
+        <input type="button" value="Enviar" onclick="verificar()">
+    </form>
+
+    <h1 id="mensagem"></h1>
+
+</body>
+</html>

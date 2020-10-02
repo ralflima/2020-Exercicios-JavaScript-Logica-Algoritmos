@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 11</title>
+
+    <!-- JS -->
+    <script>
+
+        function acao(){
+
+            // Criar o vetor
+            var numeros = []
+
+            // Capturar os valores
+            numeros.push(parseInt(document.getElementById("numero1").value))
+            numeros.push(parseInt(document.getElementById("numero2").value))
+            numeros.push(parseInt(document.getElementById("numero3").value))
+            numeros.push(parseInt(document.getElementById("numero4").value))
+            numeros.push(parseInt(document.getElementById("numero5").value))
+
+            // Verificar o maior número
+            var maiorNumero = numeros[0]
+            for(var indice=1; indice<5; indice++){
+                if(numeros[indice] > maiorNumero){
+                    maiorNumero = numeros[indice]
+                }
+            }
+
+            // Listar os números
+            for(var indice=0; indice<5; indice++){
+                document.getElementById("mensagem").innerHTML += numeros[indice] + "<br>"
+            }
+
+            // Exibir o maior valor
+            document.getElementById("mensagem").innerHTML += "<hr>" + maiorNumero
+
+        }
+
+    </script>
+</head>
+<body>
+    
+    <form>
+        <input type="text" placeholder="Primeiro número" id="numero1">
+        <input type="text" placeholder="Segundo número" id="numero2">
+        <input type="text" placeholder="Terceiro número" id="numero3">
+        <input type="text" placeholder="Quarto número" id="numero4">
+        <input type="text" placeholder="Quinto número" id="numero5">
+        <input type="button" value="Enviar" onclick="acao()">
+    </form>
+
+    <h1 id="mensagem"></h1>
+
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 10</title>
+
+    <!-- JS -->
+    <script>
+
+        function armazenar(){
+
+            // Vetor
+            var nomes = []
+
+            // Armazenar os nomes
+            nomes.push(document.getElementById("nome1").value)
+            nomes.push(document.getElementById("nome2").value)
+            nomes.push(document.getElementById("nome3").value)
+
+            // Exibir o vetor
+            document.getElementById("mensagem").innerHTML = nomes[0]
+
+        }
+
+    </script>
+</head>
+<body>
+    
+    <form>
+        <input type="text" placeholder="Primeiro nome" id="nome1">
+        <input type="text" placeholder="Segundo nome" id="nome2">
+        <input type="text" placeholder="Terceiro nome" id="nome3">
+        <input type="button" value="Enviar" onclick="armazenar()">
+    </form>
+
+    <h1 id="mensagem"></h1>
+
+</body>
+</html>

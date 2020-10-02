@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 09</title>
+
+    <!-- JS -->
+    <script>
+
+        function calcular(){
+
+            // Obter o número
+            var numero = parseInt(document.getElementById("numero").value)
+
+            // Antecessor e sucessor
+            var antecessor = numero - 10
+            var sucessor = numero + 10
+
+            // Limpar o elemento mensagem
+            document.getElementById("mensagem").innerHTML = ""
+
+            // Laço
+            while(antecessor <= sucessor){
+                document.getElementById("mensagem").innerHTML += antecessor + "<hr>"
+                antecessor++
+            }
+
+        }
+
+    </script>
+</head>
+<body>
+    
+    <form>
+        <input type="text" placeholder="Número" id="numero">
+        <input type="button" value="Enviar" onclick="calcular()">
+    </form>
+
+    <h1 id="mensagem"></h1>
+
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 06</title>
+
+    <!-- JS -->
+    <script>
+
+        function tabuada(){
+
+            // Capturar número
+            var numero = parseInt(document.getElementById("numero").value)
+
+            /* While
+            var indice = 0
+            while(indice < 11){
+                document.getElementById("mensagem").innerHTML += (numero * indice) + "<br>"    
+                indice++
+            }*/
+
+            /* Do - While
+            var indice = 0
+            do{
+                document.getElementById("mensagem").innerHTML += (numero * indice) + "<br>"    
+                indice++
+            }while(indice < 11);*/
+
+            // For
+            for(var indice=0; indice<11; indice++){
+                document.getElementById("mensagem").innerHTML += numero + " X " + indice + " = " + (numero * indice) + "<br>"                    
+            }
+        }
+
+    </script>
+</head>
+<body>
+    
+    <form>
+        <input type="text" placeholder="Informe um número" id="numero">
+        <input type="button" value="Enviar" onclick="tabuada()">
+    </form>
+
+    <h1 id="mensagem"></h1>
+
+</body>
+</html>

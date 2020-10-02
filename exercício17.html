@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 17</title>
+
+    <!-- JS -->
+    <script>
+        // Matriz
+        var matriz = [
+            ["Notebook", 3000],
+            ["Smartphone", 2300],
+            ["TV", 1400],
+            ["Teclado", 70]
+        ]
+
+        // Função
+        function pesquisar(){
+
+            // Armazenar o produto pesquisado
+            var produto = document.getElementById("produto").value
+
+            // Verifica se existe o produto
+            var existe = false
+
+            // Laço
+            for(var indice=0; indice<matriz.length; indice++){
+            
+                // Condicional
+                if(produto.toLowerCase() == matriz[indice][0].toLowerCase()){
+                    existe = true
+                    document.getElementById("mensagem").innerHTML = "O valor é de R$ " + matriz[indice][1]
+                }
+            
+            }
+
+            // Caso o produto não seja encontrado
+            if(existe == false){
+                document.getElementById("mensagem").innerHTML = "O produto informado não existe."
+            }
+
+        }
+    </script>
+</head>
+<body>
+    
+    <form>
+        <input type="text" placeholder="Produto" id="produto">
+        <input type="button" value="Enviar" onclick="pesquisar()">
+    </form>
+
+    <h1 id="mensagem"></h1>
+
+</body>
+</html>

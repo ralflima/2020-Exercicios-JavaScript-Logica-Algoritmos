@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 13</title>
+
+    <!-- JS -->
+    <script>
+
+        function calcular(){
+
+            // Vetor
+            var numeros = []
+
+            // Obter os valores
+            numeros.push(parseInt(document.getElementById("numero1").value))
+            numeros.push(parseInt(document.getElementById("numero2").value))
+            numeros.push(parseInt(document.getElementById("numero3").value))
+            numeros.push(parseInt(document.getElementById("numero4").value))
+            numeros.push(parseInt(document.getElementById("numero5").value))
+
+            // Somar valores
+            var soma = 0
+            for(var indice=0; indice<5; indice++){
+                soma += numeros[indice]
+            }
+
+            // Média
+            var media = soma / 5
+
+            // Exibir a média
+            document.getElementById("mensagem").innerHTML = "A média dos valores é " + media + "<hr>"
+
+            // Exibir números maiores ou iguais a média
+            for(var indice=0; indice<5; indice++){
+                if(numeros[indice] >= media){
+                    document.getElementById("mensagem").innerHTML += numeros[indice] + "<br>"
+                }
+            }
+        }
+
+    </script>
+</head>
+<body>
+    
+    <form>
+        <input type="text" placeholder="Primeiro número" id="numero1">
+        <input type="text" placeholder="Segundo número" id="numero2">
+        <input type="text" placeholder="Terceiro número" id="numero3">
+        <input type="text" placeholder="Quarto número" id="numero4">
+        <input type="text" placeholder="Quinto número" id="numero5">
+        <input type="button" value="Enviar" onclick="calcular()">
+    </form>
+
+    <h1 id="mensagem"></h1>
+
+</body>
+</html>

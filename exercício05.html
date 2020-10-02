@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 05</title>
+
+    <!-- JS -->
+    <script>
+
+        function valida(){
+
+            // Obter os quatro lados
+            var ls = parseInt(document.getElementById("ls").value)
+            var ld = parseInt(document.getElementById("ld").value)
+            var li = parseInt(document.getElementById("li").value)
+            var le = parseInt(document.getElementById("le").value)
+
+            // Condicional
+            if(ls == ld && ld == li && li == le){
+                document.getElementById("mensagem").innerHTML = "É um quadrado"
+            }else{
+                document.getElementById("mensagem").innerHTML = "Não é um quadrado"
+            }
+
+        }
+
+    </script>
+</head>
+<body>
+    
+    <form>
+        <input type="text" placeholder="Lado Superior" id="ls">
+        <input type="text" placeholder="Lado Direito" id="ld">
+        <input type="text" placeholder="Lado Inferior" id="li">
+        <input type="text" placeholder="Lado Esquerdo" id="le">
+        <input type="button" value="Enviar" onclick="valida()">
+    </form>
+
+    <h1 id="mensagem"></h1>
+
+</body>
+</html>
